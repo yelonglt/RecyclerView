@@ -1,0 +1,30 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:listDivider">@drawable/divider_line</item>
+    </style>
+
+    <style name="Button" parent="Theme.AppCompat">
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="colorButtonNormal">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.Placeholder">
+        <item name="android:windowBackground">@drawable/ll_face_logo</item>
+    </style>
+
+    <style name="AppTheme.CenterAnimation">
+        <item name="android:windowBackground">@drawable/ll_toolbar_placeholder</item>
+    </style>
+
+    <style name="AppTheme.Simple">
+        <item name="android:windowBackground">@drawable/ll_pizza_logo</item>
+    </style>
+
+</resources>
