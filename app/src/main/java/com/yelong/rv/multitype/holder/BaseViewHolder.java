@@ -43,6 +43,10 @@ public abstract class BaseViewHolder<T> extends RecyclerView.ViewHolder {
         return view;
     }
 
+    public View getItemView() {
+        return mItemView;
+    }
+
     /**
      * 设置布局内容
      *

@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.yelong.rv.R;
+import com.yelong.rv.decoration.DividerItemDecoration;
 import com.yelong.rv.multitype.adapter.MultiTypeAdapter;
 import com.yelong.rv.multitype.model.BaseModel;
 import com.yelong.rv.multitype.model.Normal;
@@ -33,7 +34,8 @@ public class MultiTypeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_multi_type);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.info_recycler_view);
-
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
 
         List<BaseModel> models = getData();
         models.add(new One("long"));
@@ -53,7 +55,6 @@ public class MultiTypeActivity extends AppCompatActivity {
 
         mAdapter = new MultiTypeAdapter(models);
         mRecyclerView.setAdapter(mAdapter);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
 

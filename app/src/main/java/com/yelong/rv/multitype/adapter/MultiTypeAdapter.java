@@ -4,7 +4,6 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 
 import com.yelong.rv.multitype.holder.BaseViewHolder;
 import com.yelong.rv.multitype.model.BaseModel;
@@ -23,12 +22,6 @@ public class MultiTypeAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private TypeFactory mTypeFactory;
     private List<BaseModel> mModels;
 
-    private int itemHeight;
-
-    public int getItemHeight() {
-        return itemHeight;
-    }
-
     public MultiTypeAdapter(List<BaseModel> models) {
         mModels = models;
         mTypeFactory = new TypeFactoryImpl();
@@ -38,15 +31,6 @@ public class MultiTypeAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         final View itemView = View.inflate(context, viewType, null);
-
-        itemView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
-            @Override
-            public boolean onPreDraw() {
-                itemHeight = itemView.getMeasuredHeight();
-                return true;
-            }
-        });
-
         return mTypeFactory.createViewHolder(viewType, itemView);
     }
 
